@@ -9,7 +9,7 @@ describe('GetPersonByIdUseCase', () => {
   beforeEach(() => {
     personRepository = {
       findById: jest.fn(),
-    } as unknown as IPersonRepository; // Type assertion to mock the interface
+    } as unknown as IPersonRepository;
     getPersonByIdUseCase = new GetPersonByIdUseCase(personRepository);
   });
 
@@ -28,7 +28,7 @@ describe('GetPersonByIdUseCase', () => {
   test('should return null when an invalid ID is provided', async () => {
     personRepository.findById = jest.fn().mockResolvedValue(null);
 
-    const result = await getPersonByIdUseCase.execute(999); // Assuming 999 is an invalid ID
+    const result = await getPersonByIdUseCase.execute(999);
 
     expect(result).toBeNull();
     expect(personRepository.findById).toHaveBeenCalledWith(999);

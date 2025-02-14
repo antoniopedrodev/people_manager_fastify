@@ -42,28 +42,22 @@ describe('UpdatePersonUseCase', () => {
 
   describe('execute', () => {
     it('should update a person successfully', async () => {
-      // Arrange
       const personId = 1;
       mockPersonRepository.update.mockResolvedValue(mockUpdatedPerson);
 
-      // Act
       const result = await updatePersonUseCase.execute(personId, mockPersonData);
 
-      // Assert
       expect(result).toEqual(mockUpdatedPerson);
       expect(mockPersonRepository.update).toHaveBeenCalledWith(personId, expect.any(Person));
       expect(mockPersonRepository.update).toHaveBeenCalledTimes(1);
     });
 
     it('should pass correct person data to repository', async () => {
-      // Arrange
       const personId = 1;
       mockPersonRepository.update.mockResolvedValue(mockUpdatedPerson);
 
-      // Act
       await updatePersonUseCase.execute(personId, mockPersonData);
 
-      // Assert
       const [calledId, calledPerson] = mockPersonRepository.update.mock.calls[0];
       expect(calledId).toBe(personId);
       expect(calledPerson).toBeInstanceOf(Person);
@@ -76,46 +70,38 @@ describe('UpdatePersonUseCase', () => {
     });
 
     it('should handle repository errors', async () => {
-      // Arrange
       const personId = 1;
       const error = new Error('Repository error');
       mockPersonRepository.update.mockRejectedValue(error);
 
-      // Act & Assert
       await expect(updatePersonUseCase.execute(personId, mockPersonData))
         .rejects
         .toThrow('Repository error');
     });
 
     it('should handle missing required fields', async () => {
-      // Arrange
       const personId = 1;
       const invalidData = {
         ...mockPersonData,
-        name: ''  // Name is required
+        name: ''
       };
 
-      // Act & Assert
       await expect(updatePersonUseCase.execute(personId, invalidData))
         .rejects
         .toThrow('Name is required');
     });
 
     it('should create Person with correct ID', async () => {
-      // Arrange
       const personId = 1;
       mockPersonRepository.update.mockResolvedValue(mockUpdatedPerson);
 
-      // Act
       await updatePersonUseCase.execute(personId, mockPersonData);
 
-      // Assert
       const [, calledPerson] = mockPersonRepository.update.mock.calls[0];
       expect(calledPerson.id).toBe(personId);
     });
 
     it('should handle null telephone', async () => {
-      // Arrange
       const personId = 1;
       const dataWithoutTelephone = { ...mockPersonData, telephone: undefined };
       const personWithoutTelephone = new Person(
@@ -129,10 +115,8 @@ describe('UpdatePersonUseCase', () => {
       );
       mockPersonRepository.update.mockResolvedValue(personWithoutTelephone);
 
-      // Act
       const result = await updatePersonUseCase.execute(personId, dataWithoutTelephone);
 
-      // Assert
       expect(result.telephone).toBeUndefined();
       expect(mockPersonRepository.update).toHaveBeenCalledWith(
         personId,

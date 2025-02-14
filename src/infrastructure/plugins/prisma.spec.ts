@@ -24,7 +24,6 @@ describe('Prisma Plugin', () => {
   it('should register Prisma plugin and connect to database', async () => {
     await app.register(prismaPlugin);
     
-    // Ensure prisma instance exists
     expect(app.prisma).toBeDefined();
     expect(PrismaClient).toHaveBeenCalledTimes(1);
     expect(app.prisma.$connect).toHaveBeenCalledTimes(1);

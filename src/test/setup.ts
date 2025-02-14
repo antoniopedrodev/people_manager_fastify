@@ -10,7 +10,6 @@ const mockPrismaClient = {
   $disconnect: jest.fn(),
 };
 
-// Mock the PrismaClient constructor
 jest.mock('@prisma/client', () => ({
   PrismaClient: jest.fn(() => mockPrismaClient),
 }));

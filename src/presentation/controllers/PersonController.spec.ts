@@ -212,7 +212,6 @@ describe('PersonController Error Handling', () => {
       deletePersonUseCase
     );
 
-    // Mock console.error to prevent actual logging during tests
     mockConsoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
   });
 

@@ -1,8 +1,6 @@
 import Fastify from 'fastify';
 import personRoutes from './person.routes';
-import { PersonController } from '../controllers/PersonController';
 
-// Mock the PersonController and its methods
 const mockCreate = jest.fn();
 const mockGetAll = jest.fn();
 const mockGetById = jest.fn();
@@ -24,11 +22,8 @@ describe('Person Routes', () => {
 
   beforeEach(async () => {
     app = Fastify();
-    // Mock prisma to avoid real database connection
     app.decorate('prisma', {});
-    // Register routes
     await app.register(personRoutes, { prefix: '/api/people' });
-    // Reset mocks before each test
     jest.clearAllMocks();
   });
 
@@ -333,7 +328,7 @@ describe('Person Routes', () => {
       const response = await app.inject({
         method: 'PUT',
         url: '/api/people/1',
-        payload: {}, // Invalid payload
+        payload: {},
       });
 
       expect(response.statusCode).toBe(500);
