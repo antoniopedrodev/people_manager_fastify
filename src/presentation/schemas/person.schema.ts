@@ -8,6 +8,7 @@ export const personSchema = {
     cpf: { type: 'string' },
     city: { type: 'string' },
     state: { type: 'string' },
+    address: { type: 'string' },
     telephone: { type: 'string' },
     createdAt: { type: 'string', format: 'date-time' },
     updatedAt: { type: 'string', format: 'date-time' }
@@ -24,6 +25,7 @@ export const createPersonSchema = {
     cpf: { type: 'string' },
     city: { type: 'string' },
     state: { type: 'string' },
+    address: { type: 'string' },
     telephone: { type: 'string' }
   }
 };

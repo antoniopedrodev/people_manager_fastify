@@ -11,6 +11,7 @@ describe('PersonMapper', () => {
       '12345678901',
       'New York',
       'NY',
+      'Times Square',
       '1234567890'
     );
 
@@ -24,6 +25,7 @@ describe('PersonMapper', () => {
       cpf: '12345678901',
       city: 'New York',
       state: 'NY',
+      address: 'Times Square',
       telephone: '1234567890',
       createdAt: person.createdAt?.toISOString(),
       updatedAt: person.updatedAt?.toISOString()

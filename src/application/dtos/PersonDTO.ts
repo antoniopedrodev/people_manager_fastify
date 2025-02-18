@@ -5,8 +5,8 @@ export interface CreatePersonDTO {
   cpf: string,
   city: string,
   state: string,
-  telephone?: string,
   address?: string,
+  telephone?: string,
 }
 
 export interface UpdatePersonDTO extends CreatePersonDTO {}

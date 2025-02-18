@@ -36,6 +36,7 @@ export default async function personRoutes(fastify: FastifyInstance) {
       cpf: { type: 'string' },
       city: { type: 'string' },
       state: { type: 'string' },
+      address: { type: 'string' },
       telephone: { type: 'string', nullable: true },
       createdAt: { type: 'string', format: 'date-time' },
       updatedAt: { type: 'string', format: 'date-time' },
@@ -52,6 +53,7 @@ export default async function personRoutes(fastify: FastifyInstance) {
       cpf: { type: 'string' },
       city: { type: 'string' },
       state: { type: 'string' },
+      address: { type: 'string' },
       telephone: { type: 'string', nullable: true },
     },
   };
@@ -65,6 +67,7 @@ export default async function personRoutes(fastify: FastifyInstance) {
       cpf: { type: 'string' },
       city: { type: 'string' },
       state: { type: 'string' },
+      address: { type: 'string' },
       telephone: { type: 'string', nullable: true },
     },
   };

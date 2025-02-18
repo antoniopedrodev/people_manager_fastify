@@ -26,6 +26,7 @@ describe('UpdatePersonUseCase', () => {
     cpf: '12345678901',
     city: 'New York',
     state: 'NY',
+    address: 'Times Square',
     telephone: '1234567890'
   };
 
@@ -37,6 +38,7 @@ describe('UpdatePersonUseCase', () => {
     mockPersonData.cpf,
     mockPersonData.city,
     mockPersonData.state,
+    mockPersonData.address,
     mockPersonData.telephone
   );
 
@@ -66,6 +68,7 @@ describe('UpdatePersonUseCase', () => {
       expect(calledPerson.cpf).toBe(mockPersonData.cpf);
       expect(calledPerson.city).toBe(mockPersonData.city);
       expect(calledPerson.state).toBe(mockPersonData.state);
+      expect(calledPerson.address).toBe(mockPersonData.address);
       expect(calledPerson.telephone).toBe(mockPersonData.telephone);
     });
 

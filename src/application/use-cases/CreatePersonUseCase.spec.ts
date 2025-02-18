@@ -26,6 +26,7 @@ describe('CreatePersonUseCase', () => {
       cpf: '12345678901',
       city: 'New York',
       state: 'NY',
+      address: 'Times Square',
       telephone: '1234567890'
     };
 
@@ -37,6 +38,7 @@ describe('CreatePersonUseCase', () => {
       personData.cpf,
       personData.city,
       personData.state,
+      personData.address,
       personData.telephone
     );
 
@@ -58,6 +60,7 @@ describe('CreatePersonUseCase', () => {
       cpf: '12345678901',
       city: 'New York',
       state: 'NY',
+      address: 'Times Square',
       telephone: '1234567890'
     };
 

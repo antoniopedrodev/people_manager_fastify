@@ -7,8 +7,8 @@ export class Person {
     public readonly cpf: string,
     public readonly city: string,
     public readonly state: string,
-    public readonly telephone?: string,
     public readonly address?: string,
+    public readonly telephone?: string,
     public readonly createdAt?: Date,
     public readonly updatedAt?: Date
   ) {

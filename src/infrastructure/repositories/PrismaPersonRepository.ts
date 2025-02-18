@@ -14,6 +14,7 @@ export class PrismaPersonRepository implements IPersonRepository {
         cpf: person.cpf,
         city: person.city,
         state: person.state,
+        address: person.address,
         telephone: person.telephone,
       },
     });
@@ -44,6 +45,7 @@ export class PrismaPersonRepository implements IPersonRepository {
         cpf: person.cpf,
         city: person.city,
         state: person.state,
+        address: person.address,
         telephone: person.telephone,
       },
     });
@@ -66,6 +68,7 @@ export class PrismaPersonRepository implements IPersonRepository {
       prismaModel.cpf,
       prismaModel.city,
       prismaModel.state,
+      prismaModel.address,
       prismaModel.telephone,
       prismaModel.createdAt,
       prismaModel.updatedAt

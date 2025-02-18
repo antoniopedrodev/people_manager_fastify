@@ -41,6 +41,7 @@ describe('Person Routes', () => {
         cpf: '12345678900',
         city: 'City',
         state: 'ST',
+        address: 'Times Square',
         telephone: '1234567890',
         createdAt: '2024-01-01T00:00:00.000Z',
         updatedAt: '2024-01-01T00:00:00.000Z',

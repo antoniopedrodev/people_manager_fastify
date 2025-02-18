@@ -14,6 +14,7 @@ export class UpdatePersonUseCase {
       data.cpf,
       data.city,
       data.state,
+      data.address,
       data.telephone
     );
     

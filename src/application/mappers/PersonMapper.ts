@@ -8,8 +8,8 @@ export interface PersonDTO {
   cpf: string,
   city: string,
   state: string,
-  telephone?: string,
   address?: string,
+  telephone?: string,
   createdAt?: string;
   updatedAt?: string;
 }
@@ -24,6 +24,7 @@ export class PersonMapper {
       cpf: person.cpf,
       city: person.city,
       state: person.state,
+      address: person.address,
       telephone: person.telephone,
       createdAt: person.createdAt?.toISOString(),
       updatedAt: person.updatedAt?.toISOString()

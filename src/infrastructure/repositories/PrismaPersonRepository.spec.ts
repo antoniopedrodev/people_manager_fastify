@@ -19,6 +19,7 @@ describe('PrismaPersonRepository', () => {
     cpf: '12345678901',
     city: 'New York',
     state: 'NY',
+    address: 'Times Square',
     telephone: '1234567890',
     createdAt: new Date(),
     updatedAt: new Date()
@@ -36,6 +37,7 @@ describe('PrismaPersonRepository', () => {
         mockPersonData.cpf,
         mockPersonData.city,
         mockPersonData.state,
+        mockPersonData.address,
         mockPersonData.telephone
       );
 
@@ -114,6 +116,7 @@ describe('PrismaPersonRepository', () => {
         updatedData.cpf,
         updatedData.city,
         updatedData.state,
+        updatedData.address,
         updatedData.telephone
       );
 
@@ -131,6 +134,7 @@ describe('PrismaPersonRepository', () => {
           cpf: updatedData.cpf,
           city: updatedData.city,
           state: updatedData.state,
+          address: updatedData.address,
           telephone: updatedData.telephone,
         }
       });
@@ -147,6 +151,7 @@ describe('PrismaPersonRepository', () => {
         mockPersonData.cpf,
         mockPersonData.city,
         mockPersonData.state,
+        mockPersonData.address,
         mockPersonData.telephone
       );
 
